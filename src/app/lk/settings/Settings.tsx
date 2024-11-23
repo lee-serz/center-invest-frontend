@@ -38,8 +38,8 @@ export function Settings() {
 					<div>
 						<Field
 							id='email'
-							label='Email: '
-							placeholder='Enter email: '
+							label=''
+							placeholder='Почта'
 							type='email'
 							{...register('email', {
 								required: 'Email is required!'
@@ -49,16 +49,16 @@ export function Settings() {
 
 						<Field
 							id='name'
-							label='Name: '
-							placeholder='Enter name: '
+							label=''
+							placeholder='Имя'
 							{...register('name')}
 							extra='mb-4'
 						/>
 
 						<Field
 							id='password'
-							label='Password: '
-							placeholder='Enter password: '
+							label=''
+							placeholder='Сменить пароль'
 							type='password'
 							{...register('password')}
 							extra='mb-10'
@@ -68,8 +68,8 @@ export function Settings() {
 					<div>
 						<Field
 							id='workInterval'
-							label='Work interval (min.): '
-							placeholder='Enter work interval (min.): '
+							label='Длительность круга помодоро(мин.)'
+							placeholder=''
 							isNumber
 							{...register('workInterval', {
 								valueAsNumber: true
@@ -79,8 +79,8 @@ export function Settings() {
 
 						<Field
 							id='breakInterval'
-							label='Break interval (min.): '
-							placeholder='Enter break interval (min.): '
+							label='Длительность отдыха помодоро(мин.)'
+							placeholder=''
 							isNumber
 							{...register('breakInterval', {
 								valueAsNumber: true
@@ -90,8 +90,8 @@ export function Settings() {
 
 						<Field
 							id='intervalsCount'
-							label='Intervals count (max 10): '
-							placeholder='Enter intervals count (max 10): '
+							label='Количество кругов помодоро'
+							placeholder=''
 							isNumber
 							{...register('intervalsCount', {
 								valueAsNumber: true

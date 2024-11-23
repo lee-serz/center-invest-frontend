@@ -2,13 +2,13 @@
 	@apply grid grid-flow-col gap-2;
 	overflow-x: auto;
 	.column {
-		@apply w-[200px] bg-[#242427] rounded pt-2;
+		@apply w-[200px] bg-foreground rounded pt-2;
 		white-space: nowrap;
 		min-height: 79vh;
 		text-align: center;
 		font-size: 16px;
 		.card {
-			@apply rounded border mt-5 p-4 relative bg-[#0e0f0f];
+			@apply  text-[12px] mt-5 p-4 relative bg-zinc-500 dark:bg-zinc-300 text-black;
 
 			&.completed {
 				@apply italic line-through opacity-50;
@@ -16,7 +16,7 @@
 
 			.cardHeader {
 				@apply flex items-center mb-2;
-				font-size: 93%;
+				font-size: 16px;
 
 				> input:last-child {
 					@apply ml-2;
@@ -48,7 +48,7 @@
 }
 
 .grip {
-	@apply opacity-20 transition-opacity -ml-1 -mr-0.5 absolute top-2 right-1.5;
+	@apply text-[14px] opacity-20 transition-opacity -ml-1 -mr-0.5 absolute top-2 right-1.5;
 
 	&:hover,
 	&:active {

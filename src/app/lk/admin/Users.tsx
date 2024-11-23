@@ -1,12 +1,12 @@
 'use client'
 
-import UserService from '@/services/user.service'
+import { userService } from '@/services/user.service'
 import { useQuery } from '@tanstack/react-query'
 
 export function Users() {
 	const { data, isLoading } = useQuery({
 		queryKey: ['users'],
-		queryFn: () => UserService.fetchList()
+		queryFn: () => userService.fetchList()
 	})
 
 	return (

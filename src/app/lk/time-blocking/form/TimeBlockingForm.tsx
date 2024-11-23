@@ -51,8 +51,8 @@ export function TimeBlockingForm() {
 					required: true
 				})}
 				id='name'
-				label='Enter name:'
-				placeholder='Enter name:'
+				label=''
+				placeholder='Название задачи'
 				extra='mb-4'
 			/>
 
@@ -62,14 +62,14 @@ export function TimeBlockingForm() {
 					valueAsNumber: true
 				})}
 				id='duration'
-				label='Enter duration (min.):'
-				placeholder='Enter duration (min.):'
+				label=''
+				placeholder='Длительность (мин.):'
 				isNumber
 				extra='mb-4'
 			/>
 
 			<div>
-				<span className='inline-block mb-1.5'>Color:</span>
+				<span className='inline-block mb-1.5'>Цвет:</span>
 				<Controller
 					control={control}
 					name='color'

@@ -12,7 +12,7 @@ interface AuthFormProps {
 }
 
 export function AuthForm({ isLogin }: AuthFormProps) {
-	const { handleSubmit, isLoading, onSubmit, register, formState, getValues } =  useAuthForm(isLogin)
+	const { handleSubmit, isLoading, onSubmit, register, formState } =  useAuthForm(isLogin)
 	
 	const passwordError = formState.errors['password']?.message
 	const emailError = formState.errors['email']?.message
@@ -29,7 +29,7 @@ export function AuthForm({ isLogin }: AuthFormProps) {
 			</div>
 			<p className='text-center uppercase mt-5 mb-5'>Или</p>
 			<div className="">
-			<div className="mb-4">
+			<div className="mb-4 input-">
 				<label className="text-gray-600">
 					<input
 						type="email"
@@ -83,10 +83,10 @@ export function AuthForm({ isLogin }: AuthFormProps) {
 
 			</form>
 			<div className="flex flex-col h-full w-1/2 ">
-				<div className="h-full">
+				<div className="bg-[#fff]">
 					<img className='w-[663px] object-cover' src="/auth-image.svg" alt="" />
 				</div>
-				<div className="bg-[#4EB34A] grow h-[80px]">
+				<div className="bg-[#4EB34A] grow font-bold text-white text-[2rem] text-center pt-4">
 				Управляй временем вместе с Центр-Инвест
 				</div>
 			</div>

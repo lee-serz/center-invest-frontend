@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
-import { useRef, useTransition } from 'react'
+import { useTransition } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 
@@ -23,7 +23,7 @@ export function useAuthForm(isLogin: boolean) {
 		onSuccess() {
 			startTransition(() => {
 				reset()
-				router.replace('/')
+				router.replace('lk/tasks')
 				toast.success('Вы успешно вошли!')
 			})
 		},
@@ -42,7 +42,7 @@ export function useAuthForm(isLogin: boolean) {
 		onSuccess() {
 			startTransition(() => {
 				reset()
-				router.replace('/')
+				router.replace('lk/tasks')
 			})
 		},
 		onError(error) {

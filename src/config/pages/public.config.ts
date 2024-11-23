@@ -1,8 +1,8 @@
 class PublicPages {
-	HOME = '/'
-	LOGIN = '/login'
-	REGISTER = '/register'
-	PLANS = '/plans'
+	HOME = '/lk'
+	LOGIN = '/lk/login'
+	REGISTER = '/lk/register'
+	PLANS = '/lk/plans'
 }
 
 export const PUBLIC_PAGES = new PublicPages()

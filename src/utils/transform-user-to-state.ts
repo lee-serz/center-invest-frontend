@@ -15,8 +15,9 @@ export const transformUserToState = (
 	return {
 		...user,
 		isLoggedIn: true,
-		isAdmin: user.rights.includes(UserRole.ADMIN),
-		isManager: user.rights.includes(UserRole.MANAGER),
-		isPremium: user.rights.includes(UserRole.PREMIUM)
+		isAdmin: user.user.rights.includes(UserRole.ADMIN),
+		isManager: user.user.rights.includes(UserRole.TUTOR),
+		isPremium: user.user.rights.includes(UserRole.PREMIUM)
+
 	}
 }

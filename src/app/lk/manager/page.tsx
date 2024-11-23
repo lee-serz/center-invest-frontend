@@ -1,4 +1,4 @@
-import { ManagerContent } from '@/app/i/manager/ManagerContent'
+import { ManagerContent } from "./ManagerContent"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {

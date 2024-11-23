@@ -1,12 +1,12 @@
 'use client'
 
-import UserService from '@/services/user.service'
+import { userService } from '@/services/user.service'
 import { useQuery } from '@tanstack/react-query'
 
 export function ManagerContent() {
 	const { data, isLoading } = useQuery({
 		queryKey: ['manager-content'],
-		queryFn: () => UserService.fetchManagerContent()
+		queryFn: () => userService.fetchManagerContent()
 	})
 
 	return (

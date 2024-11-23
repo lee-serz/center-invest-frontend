@@ -22,7 +22,7 @@ class UserService {
 	}
 
 	async update(data: TypeUserForm) {
-		const response = await axiosClassic.put(this._BASE_URL, data)
+		const response = await instance.put(this._BASE_URL, data)
 		return response.data
 	}
 }

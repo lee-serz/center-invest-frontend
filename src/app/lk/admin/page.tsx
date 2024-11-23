@@ -1,4 +1,4 @@
-import { Users } from '@/app/i/admin/Users'
+import { Users } from "./Users"
 
 import type { Metadata } from 'next'
 

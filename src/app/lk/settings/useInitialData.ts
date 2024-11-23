@@ -7,7 +7,6 @@ import { useProfile } from '@/hooks/useProfile'
 
 export function useInitialData(reset: UseFormReset<TypeUserForm>) {
 	const { user, fetchProfileSuccess } = useProfile()
-
 	useEffect(() => {
 		if (user) {
 			reset({

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function TimeBlockingPage() {
 	return (
 		<div>
-			<Heading title='Time blocking' />
+			<Heading title='Тайм-блоки' />
 			<TimeBlocking />
 		</div>
 	)

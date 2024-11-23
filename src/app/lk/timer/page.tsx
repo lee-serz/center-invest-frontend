@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function PomodoroPage() {
 	return (
 		<div>
-			<Heading title='Pomodoro timer' />
+			<Heading title='Помодоро' />
 			<Pomodoro />
 		</div>
 	)

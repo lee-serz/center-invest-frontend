@@ -5,7 +5,7 @@ import cn from 'clsx'
 import { MutableRefObject, useEffect, useRef, useState } from 'react'
 import { useAtom } from 'jotai'
 import { m } from 'framer-motion'
-import { Keyboard, PanelLeftClose, PanelLeftOpen } from 'lucide-react'
+import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
 import { isCollapsedAtom } from '@/store'
 import styles from './Sidebar.module.scss'
 import { Menu } from './Menu'
@@ -43,6 +43,7 @@ export function Sidebar() {
 				animate={{ width: isCollapsed ? 50 : 224 }}
 				transition={{ type: 'spring', stiffness: 300, damping: 23 }}
 			>
+				
 				<button className={styles.toggle} onClick={toggleSidebar}>
 					{isCollapsed ? <PanelLeftOpen /> : <PanelLeftClose />}
 				</button>

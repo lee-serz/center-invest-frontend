@@ -1,9 +1,8 @@
 export const COLORS = [
-	'tomato',
-	'orchid',
-	'coral',
-	'seagreen',
+	'red',
+	'purple',
 	'orange',
-	'royalblue',
-	'lightslategray'
+	'green',
+	'blue',
+	'gray'
 ]

@@ -37,15 +37,15 @@ export function TimeBlockingList() {
 								/>
 							))
 						) : (
-							<div>Add the first time-block on the right form</div>
+							<div>Добавьте первый тайм-блок в форме</div>
 						)}
 					</SortableContext>
 				</div>
 			</DndContext>
 			<div>
-				{hoursLeft > 0
-					? `${hoursLeft} hours out of 24 left for sleep`
-					: 'No hours left for sleep'}
+				{hoursLeft > 8
+					? `Свободного времени осталось - ${hoursLeft}ч. `
+					: 'Снизьте нагрузку! Осталось мало времени на сон.'}
 			</div>
 		</div>
 	)

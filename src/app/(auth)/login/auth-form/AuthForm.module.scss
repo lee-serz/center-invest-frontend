@@ -11,8 +11,19 @@
 }
 
 .input-field {
+	position: relative;
 	background: #F5F5F5;
 	padding: 10px 25px;
 	border-radius: 10px;
 	color: #333;
+}
+
+.input-mail::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	background-image: url('/mail.svg');
 }

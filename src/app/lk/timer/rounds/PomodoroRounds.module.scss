@@ -12,7 +12,9 @@
 
 .round {
 	@apply rounded border w-5 h-5 relative;
-
+	&.completed {
+		background: #4EB34A;
+	}
 	&::before {
 		@apply  rounded-l transition-all duration-300;
 		content: '';

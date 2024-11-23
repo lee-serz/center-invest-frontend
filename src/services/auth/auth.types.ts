@@ -1,13 +1,13 @@
 export enum UserRole {
 	USER = 'USER',
 	PREMIUM = 'PREMIUM',
-	MANAGER = 'MANAGER',
-	ADMIN = 'ADMIN'
+	ADMIN = 'ADMIN',
+	TUTOR = "TUTOR"
 }
 
 export interface ITokenInside {
 	id: number
-	rights: UserRole[]
+	rights: UserRole[] 
 	iat: number
 	exp: number
 }

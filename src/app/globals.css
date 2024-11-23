@@ -2,8 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Светлая тема */
+:root {
+	--background: #f4f4f5;
+	--foreground: #e4e4e7;
+	--text: #000;
+  }
+  
+  /* Тёмная тема */
+  .dark {
+	--background: #18181b; /* пример тёмного фона */
+	--foreground: #242427;
+	--text: #fff /* пример светлого текста */
+  }
+
 html {
-	@apply bg-zinc-900 text-white;
+	@apply bg-background text-text;
 }
 
 body {
@@ -15,7 +30,7 @@ body {
 
 input,
 button {
-	font-size: 20px;
+	font-size: 16px;
 }
 
 h1 {
