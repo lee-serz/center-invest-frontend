@@ -13,7 +13,7 @@ export function Providers({ children }: PropsWithChildren) {
 		<QueryClientProvider client={client}>
 			<LazyMotion features={domAnimation}>{children}</LazyMotion>
 			<Toaster />
-			<ReactQueryDevtools initialIsOpen={false} />
+			{/* <ReactQueryDevtools initialIsOpen={false} /> */}
 		</QueryClientProvider>
 	)
 }

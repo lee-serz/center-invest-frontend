@@ -36,7 +36,6 @@ export function ListRow({ item, setItems }: IListRow) {
 
 	const { data: categories } = useCategories()
 	const { deleteTask, isDeletePending } = useDeleteTask()
-	console.log(categories)
 
 	return (
 		<div
@@ -76,11 +75,11 @@ export function ListRow({ item, setItems }: IListRow) {
 						<select
 							value={value || ''}
 							onChange={e => onChange(e.target.value)}
-							className="w-full p-2 bg-foreground rounded"
+							className="w-full p-2 bg-foreground rounded text-[12px]"
 						>
-							<option value="">Выберите категорию</option>
+							<option className='text-[14px]' value="">Выберите категорию</option>
 							{categories?.data?.map(category => (
-								<option key={category.id} value={category.name}>
+								<option className='text-[14px]' key={category.id} value={category.name}>
 									{category.name}
 								</option>
 							))}

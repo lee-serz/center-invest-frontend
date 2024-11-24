@@ -1,7 +1,7 @@
 'use client'
 
 import { Suspense } from 'react'
-import { useGetAllGroup } from '@/app/hooks/useGetAllGroup'
+// import { useGetAllGroup } from '@/app/hooks/useGetAllGroup'
 
 function GroupTable() {
 	// const { data: groups } = useGetTutorGroup() // Получение данных групп
@@ -19,7 +19,7 @@ function GroupTable() {
 					</tr>
 				</thead>
 				<tbody>
-					{groups?.map((group) => ( // Проверка на наличие данных перед вызовом map
+					{/* {groups?.map((group) => ( // Проверка на наличие данных перед вызовом map
 						<tr key={group.id} className="hover:bg-foreground">
 							<td className="border border-gray-300 px-4 py-2 text-center">{group.id}</td>
 							<td className="border border-gray-300 px-4 py-2">{group.name || 'Без названия'}</td>
@@ -34,7 +34,7 @@ function GroupTable() {
 								</a>
 							</td>
 						</tr>
-					))}
+					))} */}
 				</tbody>
 			</table>
 		</div>
