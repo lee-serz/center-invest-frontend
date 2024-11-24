@@ -1,6 +1,7 @@
 import type { IBase } from './root.types'
 
 export interface ICategoriesResponse {
+	id: string;
 	name: string
 }
 

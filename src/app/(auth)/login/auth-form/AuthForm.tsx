@@ -19,17 +19,17 @@ export function AuthForm({ isLogin }: AuthFormProps) {
 	const emailError = formState.errors['email']?.message
 
 	return (
-		<div className="flex justify-center between items-center h-full">
+		<div className="flex justify-around items-center h-full gap-5">
 			<form
 			onSubmit={handleSubmit(onSubmit)}	
-			className="px-20 flex flex-col justify-between max-h-full"
+			className="flex flex-col justify-between max-h-full grow"
 		>
 			
 			<div className="mb-4">
 				<SocialMediaButtons />
 			</div>
 			<p className='text-center uppercase mt-5 mb-5'>Или</p>
-			<div className="">
+
 			<div className="mb-4 input-">
 				<label className="text-gray-600">
 					<input
@@ -78,12 +78,11 @@ export function AuthForm({ isLogin }: AuthFormProps) {
 					{isLoading ? 'Загрузка...' : isLogin ? 'Войти' : 'Зарегистрироваться'}
 				</button>
 			</div>
-			</div>
 
 			<AuthToggle isLogin={isLogin} />
 
 			</form>
-			<div className="flex flex-col h-full w-1/2 ">
+			<div className="max-lg:hidden w-1/2 flex flex-col h-full">
 				<div className="bg-background">
 				<Image 
 					className='w-[663px] object-cover' 

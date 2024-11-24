@@ -8,7 +8,7 @@ export function AuthToggle({ isLogin }: { isLogin: boolean }) {
 		<div className="text-center text-base mt-3">
 			{isLogin ? (
 				<p>
-					Нет аккаунта?{' '}
+					Нет аккаунта?{' '} <br />
 					<button
 						type="button"
 						className="text-[#4EB34A] text-base"
@@ -19,7 +19,7 @@ export function AuthToggle({ isLogin }: { isLogin: boolean }) {
 				</p>
 			) : (
 				<p>
-					Уже есть аккаунт?{' '}
+					Уже есть аккаунт?{' '} <br />
 					<button
 						type="button"
 						className="text-[#4EB34A] text-base"

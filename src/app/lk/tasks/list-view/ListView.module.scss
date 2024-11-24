@@ -10,7 +10,7 @@
 	  @apply rounded w-auto whitespace-nowrap;
   
 	  > div {
-		@apply border-r py-2 px-4;
+		@apply py-2 px-4;
   
 		&:last-child {
 		  @apply border-0;
@@ -31,9 +31,10 @@
 	  }
   
 	  .row {
-		@apply font-normal grid grid-cols-[1.4fr_.4fr_.4fr_.1fr] relative;
+		@apply grid grid-cols-[1.4fr_.4fr_.4fr_.1fr] max-lg:flex max-lg:flex-col gap-5 font-normal relative;
 		overflow-x: auto;
-		z-index: 10; // Установите z-index для элементов, которые должны быть поверх других
+		overflow-y: visible;
+		z-index: 1; // Установите z-index для элементов, которые должны быть поверх других
   
 		&.completed {
 		  > div > span > input {
