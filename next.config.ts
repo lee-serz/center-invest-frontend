@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
+
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const withPWA = require("@ducanh2912/next-pwa").default({
+dest: "public",
+});
+
+module.exports = withPWA({
+// Your Next.js config
+});
+
 const nextConfig = {
 	rewrites: () => {
 		return [

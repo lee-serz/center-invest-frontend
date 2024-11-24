@@ -1,10 +1,9 @@
 'use client'
 
-import Loader from '@/components/ui/Loader'
-import { useCategoriesForm } from './hooks/useCategoriesForm'
+import { useGroupCreateForm } from './useGroupCreateForm'
 
-export function Categories() {
-	const { handleSubmit, isPending, onSubmit, register } = useCategoriesForm()
+export function GroupCreateForm() {
+	const { handleSubmit, isPending, onSubmit, register } = useGroupCreateForm()
 
 	return (
 		<div className="mb-5">
@@ -15,8 +14,16 @@ export function Categories() {
 							<input
 								className="h-full min-w-[300px] max-w-[500px] mb-2 flex w-full bg-foreground items-center justify-center rounded-lg  p-3 text-base outline-none placeholder:text-text placeholder:font-normal duration-500 transition-colors focus:border-primary"
 								type="text"
-								placeholder="Введите название категории"
+								placeholder="Введите название группы"
 								{...register('name', {
+									required: 'Обязательно для заполнения'
+								})}
+							/>
+                            <input
+								className="h-full min-w-[300px] max-w-[500px] mb-2 flex w-full bg-foreground items-center justify-center rounded-lg  p-3 text-base outline-none placeholder:text-text placeholder:font-normal duration-500 transition-colors focus:border-primary"
+								type="text"
+								placeholder="Введите описание группы"
+								{...register('description', {
 									required: 'Обязательно для заполнения'
 								})}
 							/>

@@ -5,6 +5,20 @@ export interface IAuthForm {
 	password: string
 }
 
+export interface IAllUsers {
+	id: string
+	name?: string
+	email: string
+	rights: UserRole[]
+}
+
+export interface IAllGroup {
+	id: string
+	name?: string
+	description: string
+	inviteLink: string
+}
+
 export interface IUser {
 	id: number
 	name?: string
