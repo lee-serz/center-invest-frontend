@@ -40,7 +40,7 @@ export function LogoutButton() {
         disabled={isLogoutLoading}
         className="p-2"
       >
-        <div className="mt-4 w-10 h-10 text-text">
+        <div className="flex align-center justify-center text-text">
           <LogOut />
         </div>
       </button>

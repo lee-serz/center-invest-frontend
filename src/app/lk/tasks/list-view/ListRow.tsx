@@ -34,9 +34,9 @@ export function ListRow({ item, setItems }: IListRow) {
 
 	useTaskDebounce({ watch, itemId: item.id })
 
-	const { data } = useCategories()
-	console.log(data)
+	const { data: categories } = useCategories()
 	const { deleteTask, isDeletePending } = useDeleteTask()
+	console.log(categories)
 
 	return (
 		<div
@@ -71,6 +71,26 @@ export function ListRow({ item, setItems }: IListRow) {
 			<div>
 				<Controller
 					control={control}
+					name='category'
+					render={({ field: { value, onChange } }) => (
+						<select
+							value={value || ''}
+							onChange={e => onChange(e.target.value)}
+							className="w-full p-2 bg-foreground rounded"
+						>
+							<option value="">Выберите категорию</option>
+							{categories?.data?.map(category => (
+								<option key={category.id} value={category.name}>
+									{category.name}
+								</option>
+							))}
+						</select>
+					)}
+				/>
+			</div>
+			<div>
+				<Controller
+					control={control}
 					name='createdAt'
 					render={({ field: { value, onChange } }) => (
 						<DatePicker
@@ -80,6 +100,7 @@ export function ListRow({ item, setItems }: IListRow) {
 					)}
 				/>
 			</div>
+
 			<div className='capitalize'>
 				<Controller
 					control={control}
@@ -96,6 +117,9 @@ export function ListRow({ item, setItems }: IListRow) {
 					)}
 				/>
 			</div>
+
+			{/* Новый блок для выбора категории */}
+
 			<div>
 				<button
 					onClick={() =>

@@ -37,10 +37,10 @@ export function Settings() {
   return (
     <div>
       <form
-        className='w-2/4'
+        className='w-2/4 max-lg:w-full'
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className='grid grid-cols-2 gap-10'>
+        <div className='grid grid-cols-2 gap-10 max-lg:grid-cols-1'>
           <div>
             <Field
               id='email'
@@ -127,30 +127,30 @@ export function Settings() {
             )}
           </div>
 
-          <div>
+          <div className='mb-5'>
             <h2>Внешние сервисы: Telegram</h2>
             <a href="https://t.me/centr_invest_testbot"> 
             Перейти в сервис 
             </a>
-            <Field
-                id='token'
-                label='Ваш личный токен для подключения бота к системе'
-                placeholder=''
-                isNumber
-                {...register('token')} 
-                extra='mb-6'
-                readOnly
-              />
+            <div className="mb-5">
+              <Field
+                  id='token'
+                  label='Ваш личный токен для подключения бота к системе'
+                  placeholder=''
+                  isNumber
+                  {...register('token')} 
+                  extra='mb-6'
+                  readOnly
+                />
+                <Button
+                  type='submit'
+                  disabled={isPending}
+                >
+                  Сохранить
+                </Button>
+            </div>
           </div>
-
         </div>
-
-        <Button
-          type='submit'
-          disabled={isPending}
-        >
-          Сохранить
-        </Button>
       </form>
     </div>
   )

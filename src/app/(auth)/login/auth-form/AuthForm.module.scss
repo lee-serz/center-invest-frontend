@@ -17,13 +17,3 @@
 	border-radius: 10px;
 	color: #333;
 }
-
-.input-mail::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 10px;
-	height: 10px;
-	background-image: url('/mail.svg');
-}
