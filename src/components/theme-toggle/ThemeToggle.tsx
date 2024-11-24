@@ -1,3 +1,4 @@
+import { Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const ThemeToggle = () => {
@@ -26,8 +27,8 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button onClick={toggleTheme} className="p-2 rounded bg-gray-200 dark:bg-gray-700">
-      {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+    <button onClick={toggleTheme} className="p-2 rounded">
+      {isDarkMode ? <Sun /> : <Moon />}
     </button>
   );
 };

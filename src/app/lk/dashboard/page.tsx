@@ -1,4 +1,4 @@
-import { PremiumContent } from './PremiumContent'
+// import { PremiumContent } from './PremiumContent'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -6,5 +6,6 @@ export const metadata: Metadata = {
 }
 
 export default function DashboardPage() {
-	return <PremiumContent />
+	// return <PremiumContent />
+	return <div>f</div>
 }

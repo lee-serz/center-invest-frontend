@@ -2,7 +2,7 @@
 
 import Loader from '@/components/ui/Loader'
 
-import { useLocalStorage } from '@/hooks/useLocalStorage'
+import { useLocalStorage } from '@/app/hooks/useLocalStorage'
 
 import { SwitcherView } from './SwitcherView'
 import { KanbanView } from './kanban-view/KanbanView'

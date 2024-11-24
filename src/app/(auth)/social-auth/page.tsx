@@ -13,7 +13,7 @@ export default function SocialAuthPage() {
 		if (accessToken) saveTokenStorage(accessToken)
 
 		router.replace('/')
-	}, [])
+	}, [router, searchParams])  // Добавляем зависимости
 
 	return <div>Загрузка...</div>
 }

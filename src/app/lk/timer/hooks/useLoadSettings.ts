@@ -1,10 +1,11 @@
-import { useProfile } from '@/hooks/useProfile'
+import { useProfile } from '@/app/hooks/useProfile'
 
 export function useLoadSettings() {
-	const { data } = useProfile()
+  const { user } = useProfile() // Получаем user, а не data
 
-	const workInterval = data?.user.workInterval ?? 50
-	const breakInterval = data?.user.workInterval ?? 10
+  // Если user существует, извлекаем workInterval и breakInterval, иначе задаем дефолтные значения
+  const workInterval = user?.workInterval ?? 50
+  const breakInterval = user?.breakInterval ?? 10
 
-	return { workInterval, breakInterval }
+  return { workInterval, breakInterval }
 }

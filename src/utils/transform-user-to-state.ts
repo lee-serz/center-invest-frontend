@@ -4,9 +4,9 @@ export type TUserDataState = {
 	id: number
 	rights: UserRole[]
 	isLoggedIn: boolean
+	isTutor: boolean
 	isAdmin: boolean
-	isManager: boolean
-	isPremium: boolean
+
 }
 
 export const transformUserToState = (
@@ -15,9 +15,7 @@ export const transformUserToState = (
 	return {
 		...user,
 		isLoggedIn: true,
-		isAdmin: user.user.rights.includes(UserRole.ADMIN),
-		isManager: user.user.rights.includes(UserRole.TUTOR),
-		isPremium: user.user.rights.includes(UserRole.PREMIUM)
-
+		isTutor: user.rights?.includes(UserRole.TUTOR),
+		isAdmin: user.rights?.includes(UserRole.ADMIN),
 	}
 }

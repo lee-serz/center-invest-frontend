@@ -6,7 +6,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 
 import authService from '@/services/auth/auth.service'
-import { IFormData } from '@/types/types'
+import { IFormData } from '@/types/auth.types'
 
 export function useAuthForm(isLogin: boolean) {
 	const { register, handleSubmit, reset, formState, getValues } = useForm<IFormData>({
@@ -53,8 +53,9 @@ export function useAuthForm(isLogin: boolean) {
 	})
 
 	const onSubmit: SubmitHandler<IFormData> = data => {
-		isLogin ? mutateLogin(data) : mutateRegister(data)
-	}
+		return isLogin ? mutateLogin(data) : mutateRegister(data);
+	  };
+	  
 
 	const isLoading = isPending || isLoginPending || isRegisterPending
 

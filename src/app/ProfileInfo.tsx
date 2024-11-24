@@ -7,7 +7,7 @@ import cn from 'clsx'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useTransition } from 'react'
-import { useProfile } from '../hooks/useProfile'
+import { useProfile } from './hooks/useProfile'
 
 export function ProfileInfo() {
 	const { replace } = useRouter()
@@ -28,7 +28,7 @@ export function ProfileInfo() {
 						replace(PUBLIC_PAGES.LOGIN)
 					})
 				}, 500)
-			}),
+			})
 			queryClient.removeQueries({ queryKey: ['new tokens'], exact: true })
 			queryClient.removeQueries({ queryKey: ['profile'], exact: true })
 		}
@@ -55,9 +55,6 @@ export function ProfileInfo() {
 					<br />
 					<p className="text-lg">
 						Ваш email: {user.email}{' '}
-						<i>
-							({user.verificationToken ? 'Требует подтверждения' : 'Подтверждена'})
-						</i>
 					</p>
 					<br />
 					<p>Права: {user.rights?.join(', ')}</p>

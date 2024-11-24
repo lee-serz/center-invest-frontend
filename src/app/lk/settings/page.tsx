@@ -7,7 +7,7 @@ import { NO_INDEX_PAGE } from '@/constants/seo.constants'
 import { Settings } from './Settings'
 
 export const metadata: Metadata = {
-	title: 'Settings',
+	title: 'Настройки',
 	...NO_INDEX_PAGE
 }
 

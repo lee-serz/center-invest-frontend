@@ -65,10 +65,10 @@ export function Pomodoro() {
 			) : (
 				<Button
 					onClick={() => mutate()}
-					className='mt-1'
+					className='mt-1 bg-foreground text-text hover:opacity-80'
 					disabled={isPending}
 				>
-					Create session
+					Запустить
 				</Button>
 			)}
 		</div>

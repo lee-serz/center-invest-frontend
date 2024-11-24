@@ -15,7 +15,6 @@ export function useTodaySession({
 	const {
 		data: sessionsResponse,
 		isLoading,
-		refetch,
 		isSuccess
 	} = useQuery({
 		queryKey: ['get today session'],

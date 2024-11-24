@@ -6,6 +6,7 @@ import { AuthToggle } from './AuthToggle'
 import { SocialMediaButtons } from './SocialMediaButtons'
 import { useAuthForm } from './useAuthForm'
 import { ErrorMessage } from '@/errors/errorMessage'
+import Image from 'next/image'
 
 interface AuthFormProps {
 	isLogin: boolean
@@ -18,7 +19,7 @@ export function AuthForm({ isLogin }: AuthFormProps) {
 	const emailError = formState.errors['email']?.message
 
 	return (
-		<div className="flex justify-between items-center h-full">
+		<div className="flex justify-center between items-center h-full">
 			<form
 			onSubmit={handleSubmit(onSubmit)}	
 			className="px-20 flex flex-col justify-between max-h-full"
@@ -83,11 +84,18 @@ export function AuthForm({ isLogin }: AuthFormProps) {
 
 			</form>
 			<div className="flex flex-col h-full w-1/2 ">
-				<div className="bg-[#fff]">
-					<img className='w-[663px] object-cover' src="/auth-image.svg" alt="" />
+				<div className="bg-background">
+				<Image 
+					className='w-[663px] object-cover' 
+					src="/auth-image.svg" 
+					alt="Auth image" 
+					width={663} 
+					height={200 }
+				/>
+					
 				</div>
 				<div className="bg-[#4EB34A] grow font-bold text-white text-[2rem] text-center pt-4">
-				Управляй временем вместе с Центр-Инвест
+					Управляй временем вместе с Центр-Инвест
 				</div>
 			</div>
 		</div>

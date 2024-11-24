@@ -1,6 +1,7 @@
 import { axiosClassic } from '@/api/axios'
-import { IFormData, IUser } from '@/types/types'
+
 import { removeFromStorage, saveTokenStorage } from './auth.helper'
+import { IFormData, IUser } from '@/types/auth.types'
 
 interface IAuthResponse {
 	accessToken: string

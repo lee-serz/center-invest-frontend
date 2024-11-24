@@ -11,7 +11,7 @@ export function AuthToggle({ isLogin }: { isLogin: boolean }) {
 					Нет аккаунта?{' '}
 					<button
 						type="button"
-						className="text-indigo-500 text-base"
+						className="text-[#4EB34A] text-base"
 						onClick={() => router.push(PUBLIC_PAGES.REGISTER)}
 					>
 						Зарегистрироваться

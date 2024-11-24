@@ -30,7 +30,7 @@ export function ListAddRowInput({ setItems, filterDate }: IListAddRowInput) {
 		<div className={styles.addRow}>
 			<button
 				onClick={addRow}
-				className='w-10 h-10 hover:bg-zinc-500 leading-normal bg-zinc-600 text-xl rounded opacity-40 text-sm'
+				className='w-10 h-10 hover:bg-background leading-normal bg-background text-xl rounded opacity-40 text-sm'
 			>
 				+
 			</button>

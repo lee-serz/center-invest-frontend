@@ -1,7 +1,7 @@
 import styles from './Sidebar.module.scss'
 import { MENU } from './menu.data'
 import { MenuItem } from './MenuItem'
-import ThemeToggle from '@/components/theme-toggle/ThemeToggle'
+import { LogoutButton } from './LogoutButton'
 
 export function Menu() {
 	return (
@@ -9,7 +9,9 @@ export function Menu() {
 			{MENU.map(item => (
 				<MenuItem item={item} key={item.link} />
 			))}
-			<ThemeToggle />
+			<div className={styles.logout}>
+				<LogoutButton/>
+			</div>
 		</nav>
 	)
 }

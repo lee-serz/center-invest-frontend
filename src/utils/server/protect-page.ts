@@ -9,31 +9,30 @@ import { notFound, redirect } from 'next/navigation'
 type RoleCheckFunction = (user: TUserDataState) => boolean
 
 const roleChecks: Partial<Record<UserRole, RoleCheckFunction>> = {
-	[UserRole.ADMIN]: (user: TUserDataState) => user.isAdmin,
-	[UserRole.PREMIUM]: (user: TUserDataState) => user.isPremium,
-	[UserRole.MANAGER]: (user: TUserDataState) => user.isManager
+	[UserRole.TUTOR]: (user: TUserDataState) => user.isTutor,
+	[UserRole.ADMIN]: (user: TUserDataState) => user.isAdmin
 }
 
 type TRoles = UserRole[] | UserRole
 
-export const protectPage = async (roles: TRoles = UserRole.USER) => {
+export const protectPage = async (
+	roles: TRoles = [UserRole.USER, UserRole.TUTOR, UserRole.ADMIN],
+) => {
 	const rolesArray = Array.isArray(roles) ? roles : [roles]
 
 	const user = await getServerAuth()
 	if (!user) {
-		return rolesArray.includes(UserRole.ADMIN)
+		return rolesArray.includes(UserRole.TUTOR)
 			? notFound()
 			: redirect(PUBLIC_PAGES.LOGIN)
 	}
 
-	for (const role of rolesArray) {
+	const hasValidRole = rolesArray.some(role => {
 		const checkRole = roleChecks[role]
-		if (checkRole && !checkRole(user)) {
-			if (role === UserRole.PREMIUM) {
-				return redirect(PUBLIC_PAGES.PLANS)
-			} else {
-				return notFound()
-			}
-		}
+		return checkRole ? checkRole(user) : user.rights.includes(role)
+	})
+
+	if (!hasValidRole) {
+		return notFound()
 	}
 }

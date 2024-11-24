@@ -11,7 +11,7 @@ import { useCreateTimeBlock } from './useCreateTimeBlock'
 import { useUpdateTimeBlock } from './useUpdateTimBlock'
 
 export function TimeBlockingForm() {
-	const { register, control, watch, reset, handleSubmit, getValues } =
+	const { register, control, watch, reset, handleSubmit } =
 		useFormContext<TypeTimeBlockFormState>()
 
 	const existsId = watch('id')
@@ -90,7 +90,7 @@ export function TimeBlockingForm() {
 			<Button
 				type='submit'
 				disabled={isPending}
-				className='mt-6'
+				className='mt-6 text-text border-text hover:bg-foreground'
 			>
 				{existsId ? 'Update' : 'Create'}
 			</Button>

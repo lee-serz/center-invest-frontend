@@ -14,6 +14,7 @@ import { useDeleteTask } from '../hooks/useDeleteTask'
 import { useTaskDebounce } from '../hooks/useTaskDebounce'
 
 import styles from './ListView.module.scss'
+import { useCategories } from '../../categories/hooks/useCategories'
 
 interface IListRow {
 	item: ITaskResponse
@@ -26,12 +27,15 @@ export function ListRow({ item, setItems }: IListRow) {
 			name: item.name,
 			isCompleted: item.isCompleted,
 			createdAt: item.createdAt,
-			priority: item.priority
+			priority: item.priority,
+			category: item.category
 		}
 	})
 
 	useTaskDebounce({ watch, itemId: item.id })
 
+	const { data } = useCategories()
+	console.log(data)
 	const { deleteTask, isDeletePending } = useDeleteTask()
 
 	return (
@@ -59,7 +63,9 @@ export function ListRow({ item, setItems }: IListRow) {
 						)}
 					/>
 
-					<TransparentField {...register('name')} />
+					<div className="max-lg:min-w-[200px]">
+						<TransparentField {...register('name')} />
+					</div>
 				</span>
 			</div>
 			<div>
