@@ -30,7 +30,7 @@ export const MENU: IMenuItem[] = [
 	{
 		icon: CalendarRange,
 		link: AUTH_PAGES.TIME_BLOCKING,
-		name: 'Календарь'
+		name: 'Тайм-блоки'
 	},
 	{
 		icon: Settings,
