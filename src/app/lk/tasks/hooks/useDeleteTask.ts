@@ -7,7 +7,7 @@ export function useDeleteTask() {
 
 	const { mutate: deleteTask, isPending: isDeletePending } = useMutation({
 		mutationKey: ['delete task'],
-		mutationFn: (id: string) => фвьшт.deleteTask(id),
+		mutationFn: (id: string) => taskService.deleteTask(id),
 		onSuccess() {
 			queryClient.invalidateQueries({
 				queryKey: ['tasks']

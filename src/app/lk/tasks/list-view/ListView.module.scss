@@ -31,7 +31,7 @@
 	  }
   
 	  .row {
-		@apply grid grid-cols-[1.4fr_.4fr_.4fr_.1fr] max-lg:flex max-lg:flex-col gap-5 font-normal relative;
+		@apply grid grid-cols-[1.4fr_.4fr_.4fr_.4fr_.1fr] max-lg:flex max-lg:flex-col gap-5 font-normal relative;
 		overflow-x: auto;
 		overflow-y: visible;
 		z-index: 1; // Установите z-index для элементов, которые должны быть поверх других
